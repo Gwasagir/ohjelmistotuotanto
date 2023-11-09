@@ -15,6 +15,7 @@ class ProjectReader:
         
         project_name = parsed_content.get('name')
         project_description = parsed_content.get('description')
+        project_license = parsed_content.get('license')
 
         project_dependencies = []
         for key in parsed_content.get('dependencies'):
@@ -25,4 +26,4 @@ class ProjectReader:
             project_dev_dependencies.append(key)
 
         # deserialisoi TOML-formaatissa oleva merkkijono ja muodosta Project-olio sen tietojen perusteella
-        return Project(project_name , project_description, project_dependencies, project_dev_dependencies)
+        return Project(project_name , project_description, project_license, project_dependencies, project_dev_dependencies)
