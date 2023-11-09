@@ -1,5 +1,7 @@
 # Ohjelmistotuotanto
-Niko Keurulainen ohjelmistotuotannon palautukset
+## Niko Keurulainen ohjelmistotuotannon palautukset
+
+[Ohjelmistotuotanto](https://ohjelmistotuotanto-hy.github.io/)-kurssin laskareissa käytettävä Python-koodi.
 
 ### Repository tree
 <pre>
