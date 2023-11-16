@@ -8,5 +8,8 @@ class Player:
         self.penalties = dict['penalties']
         self.games = dict['games']
 
+    def pisteet(self):
+        return self.goals + self.assists
+
     def __str__(self):
-        return f"{self.name:20} {self.team:5} {self.goals:2} + {self.assists:2} = {self.assists + self.goals}"
+        return f"{self.name:20} {self.team}  {self.goals:2} + {self.assists:2} = {self.pisteet():2}"
