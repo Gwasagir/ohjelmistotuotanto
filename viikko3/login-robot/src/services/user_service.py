@@ -1,5 +1,5 @@
 from entities.user import User
-
+import re
 
 class UserInputError(Exception):
     pass
@@ -36,5 +36,9 @@ class UserService:
     def validate(self, username, password):
         if not username or not password:
             raise UserInputError("Username and password are required")
-
-        # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
+        
+        if not str(username).isalpha() or len(username) < 3:
+            raise UserInputError("Invalid username")
+        
+        if len(password) < 8 or str(password).isalpha():
+            raise UserInputError("Invalid password")
