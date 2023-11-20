@@ -11,15 +11,17 @@ ${REGISTER_URL}  http://${SERVER}/register
 
 *** Keywords ***
 Open And Configure Browser
-    ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
+    # # jos käytät Firefoxia ja Geckodriveriä käytä seuraavaa riviä sitä alemman sijaan
+    ${options}  Evaluate  sys.modules['selenium.webdriver'].FirefoxOptions()  sys
+    # ${options}  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys
     Call Method    ${options}    add_argument    --no-sandbox
-    # seuraava rivi on kommentoitu toistaiseksi pois
+    # seuraava rivi on kommentoitu pois tässä vaiheessa
     # Call Method  ${options}  add_argument  --headless
-    Open Browser  browser=chrome  options=${options}
+    Open Browser  browser=firefox  options=${options}
     Set Selenium Speed  ${DELAY}
 
 Login Page Should Be Open
-    Title Should Be  Login
+    Title Should Be  Loginfirefox
 
 Main Page Should Be Open
     Title Should Be  Ohtu Application main page
